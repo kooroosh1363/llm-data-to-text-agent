@@ -35,6 +35,6 @@ search = DDGS()
 
 # --- Async check ---
 async def run():
-    print("AI Agents stack is ready 🚀")
+    print("AI Agents talk  stack is ready 🚀")
 
 asyncio.run(run())
