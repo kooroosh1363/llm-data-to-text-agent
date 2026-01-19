@@ -1,6 +1,11 @@
 from ai_agents_libs import *
 from ai_agents_libs import *
 
+from ai_agents_libs import *
+
+state = {"step": "start", "data": None}
+print(state)
+
 results = col.query(query_texts=["What did agent learn?"], n_results=1)
 print(results)
 
