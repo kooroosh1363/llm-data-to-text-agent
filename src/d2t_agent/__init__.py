@@ -1,5 +1,16 @@
 from ai_agents_libs import *
 from ai_agents_libs import *
+from ai_agents_libs import *
+from openai import OpenAI
+
+client = OpenAI()
+
+resp = client.responses.create(
+    model="gpt-4.1-mini",
+    input="Explain AI agents in one sentence"
+)
+
+print(resp.output[0].content[0].text)
 
 def create_agent(role, goal):
     return Agent(role=role, goal=goal, backstory="AI helper")
