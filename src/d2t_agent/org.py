@@ -1,7 +1,15 @@
 from ai_agents_libs import *
-from ai_agents_libs import *
 
-from ai_agents_libs import *
+
+db = chromadb.Client()
+mem = db.create_collection("agent_mem")
+
+mem.add(
+    documents=["Agent can use tools"],
+    ids=["001"]
+)
+
+print(mem.query(query_texts=["tools"], n_results=1))
 
 state = {"step": "start", "data": None}
 print(state)
