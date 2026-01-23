@@ -1,5 +1,14 @@
 from ai_agents_libs import *
 
+from ai_agents_libs import *
+
+decision = {
+    "task": "search",
+    "tool": "browser",
+    "status": "ready"
+}
+
+print(decision)
 
 db = chromadb.Client()
 mem = db.create_collection("agent_mem")
