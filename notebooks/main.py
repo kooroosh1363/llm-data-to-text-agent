@@ -6,7 +6,15 @@ from crewai import Agent, Task, Crew
 
 # OpenAI / LLM Providers
 from openai import OpenAI
+from ai_agents_libs import *
 
+decision = {
+    "task": "search",
+    "tool": "browser",
+    "status": "ready"
+}
+
+print(decision)
 # Memory & Vector Databases
 import chromadb
 import faiss
