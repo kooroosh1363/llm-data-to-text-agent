@@ -1,6 +1,10 @@
 from ai_agents_libs import *
 
 from ai_agents_libs import *
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logging.info("Agent initialized successfully")
 
 decision = {
     "task": "search",
