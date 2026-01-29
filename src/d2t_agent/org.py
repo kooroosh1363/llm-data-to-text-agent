@@ -1,6 +1,5 @@
 from ai_agents_libs import *
 
-# config.py
 import os
 # agent.py
 class SimpleAgent:
