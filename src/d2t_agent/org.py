@@ -7,6 +7,9 @@ result = agent.act("Analyze data")
 
 print(result)
 import os
+# tools.py
+def calculator(a, b):
+    return a + b
 # agent.py
 class SimpleAgent:
     def init(self, name):
