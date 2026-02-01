@@ -1,7 +1,11 @@
 from ai_agents_libs import *
 # runner.py
 from agent import SimpleAgent
-
+# task.py
+class Task:
+    def init(self, title):
+        self.title = title
+        self.done = False
 agent = SimpleAgent("CoreAgent")
 result = agent.act("Analyze data")
 
