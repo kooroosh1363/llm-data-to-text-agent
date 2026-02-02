@@ -27,3 +27,7 @@ load_dotenv()
 
 OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 MODEL_NAME = "gpt-4.1-mini"
+tasks = ["Search", "Analyze", "Summarize"]
+
+for t in tasks:
+    print(f"Running task: {t}")
