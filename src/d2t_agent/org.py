@@ -2,6 +2,10 @@ from ai_agents_libs import *
 # runner.py
 from agent import SimpleAgent
 # task.py
+import logging
+logging.basicConfig(level=logging.INFO)
+
+logging.info("Agent started")
 class Task:
     def init(self, title):
         self.title = title
