@@ -3,20 +3,7 @@ from ai_agents_libs import *
 from agent import SimpleAgent
 # task.py
 import logging
-from pydantic import BaseModel
 
-class AgentResponse(BaseModel):
-    success: bool
-    message: str
-logging.basicConfig(level=logging.INFO)
-
-logging.info("Agent started")
-class Task:
-    def init(self, title):
-        self.title = title
-        self.done = False
-agent = SimpleAgent("CoreAgent")
-result = agent.act("Analyze data")
 
 print(result)
 import os
