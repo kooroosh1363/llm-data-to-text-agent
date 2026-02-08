@@ -18,3 +18,5 @@ class SimpleAgent:
     def act(self, task):
         return f"{self.name} is working on: {task}"
 
+if name == "main":
+    print("AI Agent Project Running...")
