@@ -20,3 +20,12 @@ class SimpleAgent:
 
 if name == "main":
     print("AI Agent Project Running...")
+
+
+agent_state = {
+    "mood": "idle",
+    "current_task": None,
+    "memory_size": 0
+}
+
+print(agent_state)
