@@ -29,3 +29,9 @@ agent_state = {
 }
 
 print(agent_state)
+def pipeline(task):
+    task = task.lower()
+    task = task.strip()
+    return f"processed: {task}"
+
+print(pipeline(" Analyze AI "))
