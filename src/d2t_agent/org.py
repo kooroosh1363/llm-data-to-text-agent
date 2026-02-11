@@ -35,3 +35,10 @@ def pipeline(task):
     return f"processed: {task}"
 
 print(pipeline(" Analyze AI "))
+tasks = [
+    {"name": "search", "priority": 2},
+    {"name": "summarize", "priority": 1}
+]
+
+tasks.sort(key=lambda x: x["priority"])
+print(tasks)
