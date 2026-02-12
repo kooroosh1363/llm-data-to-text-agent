@@ -42,3 +42,10 @@ tasks = [
 
 tasks.sort(key=lambda x: x["priority"])
 print(tasks)
+
+def decide(task_type):
+    if task_type == "search":
+        return "use_tool"
+    return "think"
+
+print(decide("search"))
