@@ -49,3 +49,8 @@ def decide(task_type):
     return "think"
 
 print(decide("search"))
+
+events = ["start", "think", "act", "end"]
+
+for e in events:
+    print(f"event: {e}")
