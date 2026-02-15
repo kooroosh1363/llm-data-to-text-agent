@@ -53,4 +53,8 @@ print(decide("search"))
 events = ["start", "think", "act", "end"]
 
 for e in events:
-    print(f"event: {e}")
+    print(f"event: {e}")short_memory = []
+
+short_memory.append("User asked about AI agents")
+print(short_memory)
+
