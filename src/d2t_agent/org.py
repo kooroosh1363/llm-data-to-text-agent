@@ -58,3 +58,11 @@ for e in events:
 short_memory.append("User asked about AI agents")
 print(short_memory)
 
+result = {
+    "task": "summarize",
+    "status": "done",
+    "output": "Short summary generated"
+}
+
+print(result)
+
