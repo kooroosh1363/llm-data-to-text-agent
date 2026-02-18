@@ -70,3 +70,9 @@ MAX_STEPS = 3
 for step in range(MAX_STEPS):
     print("step", step)
 
+
+def route(tool_name):
+    return f"Routing to {tool_name}"
+
+print(route("search_tool"))    
+
