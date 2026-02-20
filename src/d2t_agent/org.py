@@ -77,8 +77,4 @@ def route(tool_name):
 print(route("search_tool"))    
 
 
-def finish():
-    return "AI Agent finished successfully"
-
-print(finish())
 
