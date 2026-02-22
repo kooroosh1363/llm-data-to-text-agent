@@ -76,5 +76,13 @@ def route(tool_name):
 
 print(route("search_tool"))    
 
+chat_history = []
 
+def add_message(role, content):
+    chat_history.append({"role": role, "content": content})
+
+add_message("user", "What is AI agent?")
+add_message("agent", "AI agent is a system that acts autonomously")
+
+print(chat_history)
 
