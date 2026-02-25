@@ -91,3 +91,11 @@ def summarize_history(history):
 
 print(summarize_history(chat_history))
 
+
+def pipeline(task):
+    task = task.lower()
+    task = task.strip()
+    return f"processed: {task}"
+
+print(pipeline(" Analyze AI "))
+
