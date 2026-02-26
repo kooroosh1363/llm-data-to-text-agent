@@ -99,3 +99,9 @@ def pipeline(task):
 
 print(pipeline(" Analyze AI "))
 
+def plan(task):
+    return ["search info", "analyze data", "generate answer"]
+
+steps = plan("Explain AI agents")
+print(steps)
+
