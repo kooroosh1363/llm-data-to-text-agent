@@ -86,10 +86,7 @@ add_message("agent", "AI agent is a system that acts autonomously")
 
 print(chat_history)
 
-def summarize_history(history):
-    return " | ".join([msg["content"] for msg in history])
 
-print(summarize_history(chat_history))
 
 
 def pipeline(task):
