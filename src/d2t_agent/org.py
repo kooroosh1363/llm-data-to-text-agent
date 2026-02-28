@@ -102,3 +102,6 @@ def plan(task):
 steps = plan("Explain AI agents")
 print(steps)
 
+for step in steps:
+    print("Running:", step)
+
