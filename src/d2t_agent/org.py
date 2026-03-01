@@ -105,3 +105,12 @@ print(steps)
 for step in steps:
     print("Running:", step)
 
+
+
+tools = {
+    "search": lambda q: f"results for {q}",
+    "calc": lambda x: x * 2
+}
+
+print(tools["search"]("AI agents"))
+
