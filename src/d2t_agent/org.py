@@ -114,3 +114,11 @@ tools = {
 
 print(tools["search"]("AI agents"))
 
+
+def choose_tool(task):
+    if "search" in task:
+        return "search"
+    return "calc"
+
+print(choose_tool("search about LLM"))
+
