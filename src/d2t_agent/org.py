@@ -122,3 +122,12 @@ def choose_tool(task):
 
 print(choose_tool("search about LLM"))
 
+
+result = {
+    "task": "summarize",
+    "status": "done",
+    "output": "Short summary generated"
+}
+
+print(result)
+
