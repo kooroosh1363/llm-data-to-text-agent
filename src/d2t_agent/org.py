@@ -129,11 +129,5 @@ result = {
     "output": "Short summary generated"
 }
 
-print(result)
 
-
-MAX_STEPS = 3
-
-for step in range(MAX_STEPS):
-    print("step", step)
 
