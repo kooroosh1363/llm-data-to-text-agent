@@ -129,5 +129,8 @@ result = {
     "output": "Short summary generated"
 }
 
+def generate_answer(task):
+    return f"Answer for: {task}"
 
+print(generate_answer("What is LangChain?"))
 
