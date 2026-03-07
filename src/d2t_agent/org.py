@@ -134,3 +134,8 @@ def generate_answer(task):
 
 print(generate_answer("What is LangChain?"))
 
+task = "search AI agents"
+tool = choose_tool(task)
+result = tools[tool](task)
+
+print("Final:", result)
