@@ -139,3 +139,8 @@ tool = choose_tool(task)
 result = tools[tool](task)
 
 print("Final:", result)
+
+import uuid
+
+task_id = str(uuid.uuid4())
+print("Task ID:", task_id)
