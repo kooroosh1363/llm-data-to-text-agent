@@ -144,3 +144,11 @@ import uuid
 
 task_id = str(uuid.uuid4())
 print("Task ID:", task_id)
+
+from collections import deque
+
+task_queue = deque()
+task_queue.append("search ai news")
+task_queue.append("summarize article")
+
+print(task_queue.popleft())
