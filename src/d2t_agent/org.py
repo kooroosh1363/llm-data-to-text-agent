@@ -152,3 +152,15 @@ task_queue.append("search ai news")
 task_queue.append("summarize article")
 
 print(task_queue.popleft())
+
+def classify_task(text):
+    if "search" in text:
+        return "tool_search"
+    return "analysis"
+
+print(classify_task("search latest AI models"))
+
+def run_tool(name, query):
+    return f"{name} executed with query: {query}"
+
+print(run_tool("search_tool", "AI agents"))
