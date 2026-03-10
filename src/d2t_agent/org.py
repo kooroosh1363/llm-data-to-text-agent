@@ -160,7 +160,3 @@ def classify_task(text):
 
 print(classify_task("search latest AI models"))
 
-def run_tool(name, query):
-    return f"{name} executed with query: {query}"
-
-print(run_tool("search_tool", "AI agents"))
