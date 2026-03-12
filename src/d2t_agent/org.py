@@ -171,3 +171,14 @@ for i in range(3):
     steps += 1
 
 print("Total steps:", steps)
+
+
+results = []
+
+results.append({"task": "search", "output": "AI news found"})
+print(results)
+
+def is_success(result):
+    return "found" in result
+
+print(is_success("AI news found"))
