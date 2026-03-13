@@ -182,3 +182,15 @@ def is_success(result):
     return "found" in result
 
 print(is_success("AI news found"))
+
+import time
+
+start = time.time()
+time.sleep(1)
+print("Execution time:", time.time() - start)
+
+def retry(task, attempts=3):
+    for i in range(attempts):
+        print("Trying:", task)
+
+retry("fetch data")
