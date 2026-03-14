@@ -194,3 +194,8 @@ def retry(task, attempts=3):
         print("Trying:", task)
 
 retry("fetch data")
+
+status = "running"
+
+if status == "running":
+    print("Agent is processing tasks")
