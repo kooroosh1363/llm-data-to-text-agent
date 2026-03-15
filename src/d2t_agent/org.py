@@ -199,3 +199,15 @@ status = "running"
 
 if status == "running":
     print("Agent is processing tasks")
+
+# settings.py
+PROJECT_NAME = "ai-agent-system"
+VERSION = "0.1"
+DEBUG = True
+
+# config_loader.py
+from settings import PROJECT_NAME, VERSION
+
+def load_config():
+    return {"name": PROJECT_NAME, "version": VERSION}
+
