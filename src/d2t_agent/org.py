@@ -211,3 +211,14 @@ from settings import PROJECT_NAME, VERSION
 def load_config():
     return {"name": PROJECT_NAME, "version": VERSION}
 
+# registry.py
+agents = {}
+
+def register_agent(name, agent):
+    agents[name] = agent
+
+
+# registry.py
+def get_agent(name):
+    return agents.get(name)
+
