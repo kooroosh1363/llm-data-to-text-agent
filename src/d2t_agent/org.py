@@ -222,3 +222,12 @@ def register_agent(name, agent):
 def get_agent(name):
     return agents.get(name)
 
+
+# task_factory.py
+def create_task(name, data):
+    return {"task": name, "data": data}
+
+# task_runner.py
+def run_task(task):
+    print("Running task:", task["task"])
+    
