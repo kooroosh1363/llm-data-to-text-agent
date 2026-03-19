@@ -231,3 +231,13 @@ def create_task(name, data):
 def run_task(task):
     print("Running task:", task["task"])
     
+
+# storage.py
+def read_all():
+    return data_store
+
+# main.py
+from config_loader import load_config
+
+config = load_config()
+print("Project:", config["name"])
