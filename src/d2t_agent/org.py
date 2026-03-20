@@ -241,3 +241,14 @@ from config_loader import load_config
 
 config = load_config()
 print("Project:", config["name"])
+
+# agents/agent_core.py
+class Agent:
+    def init(self, name):
+        self.name = name
+        self.state = "idle"
+        self.memory = []
+
+    def think(self, task):
+        self.state = "thinking"
+        return f"{self.name} thinking about {task}"
