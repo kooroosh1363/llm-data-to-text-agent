@@ -252,3 +252,14 @@ class Agent:
     def think(self, task):
         self.state = "thinking"
         return f"{self.name} thinking about {task}"
+    
+
+# agents/agent_core.py
+    def act(self, decision):
+        self.state = "acting"
+        return f"{self.name} executes {decision}"
+    
+
+# agents/agent_core.py
+    def remember(self, info):
+        self.memory.append(info)
