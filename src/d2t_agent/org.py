@@ -263,3 +263,18 @@ class Agent:
 # agents/agent_core.py
     def remember(self, info):
         self.memory.append(info)
+
+# tasks/planner.py
+def plan(task):
+    return [
+        f"analyze {task}",
+        f"search {task}",
+        f"generate result for {task}"
+    ]
+
+
+# agents/decision.py
+def decide(step):
+    if "search" in step:
+        return "use_search_tool"
+    return "process"
