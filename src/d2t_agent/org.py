@@ -273,8 +273,5 @@ def plan(task):
     ]
 
 
-# agents/decision.py
-def decide(step):
-    if "search" in step:
-        return "use_search_tool"
-    return "process"
+
+
