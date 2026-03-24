@@ -273,5 +273,18 @@ def plan(task):
     ]
 
 
+# main.py
+from core.runner import run_agent
 
+result = run_agent("AI agents")
+
+for r in result:
+    print(r)
+
+
+# utils/logger.py
+import datetime
+
+def log(msg):
+    print(f"[{datetime.datetime.now()}] {msg}")
 
