@@ -288,3 +288,8 @@ import datetime
 def log(msg):
     print(f"[{datetime.datetime.now()}] {msg}")
 
+
+# core/runner.py
+from utils.logger import log
+
+log("Agent started")
