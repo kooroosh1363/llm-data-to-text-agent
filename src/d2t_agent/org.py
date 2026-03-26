@@ -293,3 +293,28 @@ def log(msg):
 from utils.logger import log
 
 log("Agent started")
+
+# core/llm.py
+from openai import OpenAI
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+def ask_llm(prompt):
+    res = client.responses.create(
+        model="gpt-4.1-mini",
+        input=prompt
+    )
+    return res.output[0].content[0].text
+
+
+# agents/agent_core.py
+from core.llm import ask_llm
+
+def think_with_llm(task):
+    prompt = f"You are an AI agent. Think step-by-step about: {task}"
+    return ask_llm(prompt)
+
+
