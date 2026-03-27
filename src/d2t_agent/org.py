@@ -318,3 +318,17 @@ def think_with_llm(task):
     return ask_llm(prompt)
 
 
+# agents/tool_selector.py
+def select_tool(text):
+    if "search" in text.lower():
+        return "search"
+    return "none"
+
+
+# tools/search_tool.py
+from duckduckgo_search import DDGS
+
+def search_tool(query):
+    with DDGS() as ddgs:
+        results = list(ddgs.text(query, max_results=2))
+        return results[0]["title"] if results else "no result"
