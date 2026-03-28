@@ -332,3 +332,33 @@ def search_tool(query):
     with DDGS() as ddgs:
         results = list(ddgs.text(query, max_results=2))
         return results[0]["title"] if results else "no result"
+    
+# agents/observe.py
+def observe(result):
+    return f"Observed: {result}"
+
+
+# core/agent_loop.py
+from agents.agent_core import think_with_llm
+from agents.tool_selector import select_tool
+from tools.search_tool import search_tool
+from agents.observe import observe
+
+def run_loop(task):
+    thought = think_with_llm(task)
+
+    tool = select_tool(thought)
+
+    if tool == "search":
+        action_result = search_tool(task)
+    else:
+        action_result = thought
+
+    observation = observe(action_result)
+
+    return {
+        "thought": thought,
+        "action": tool,
+        "result": action_result,
+        "observation": observation
+    }
