@@ -362,3 +362,21 @@ def run_loop(task):
         "result": action_result,
         "observation": observation
     }
+
+
+# memory/vector_store.py
+import chromadb
+
+client = chromadb.Client()
+collection = client.create_collection("agent_memory")
+
+def save_memory(text, id):
+    collection.add(documents=[text], ids=[id])
+
+
+# core/agent_loop.py
+from memory.vector_store import save_memory
+import uuid
+
+def save_result(data):
+    save_memory(str(data), str(uuid.uuid4()))
