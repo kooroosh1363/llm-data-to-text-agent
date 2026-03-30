@@ -380,3 +380,24 @@ import uuid
 
 def save_result(data):
     save_memory(str(data), str(uuid.uuid4()))
+
+
+# main.py
+from core.agent_loop import run_loop, save_result
+
+task = "search latest AI agent frameworks"
+
+result = run_loop(task)
+save_result(result)
+
+print(result)
+
+
+# utils/formatter.py
+def format_output(data):
+    return f"""
+THOUGHT: {data['thought']}
+ACTION: {data['action']}
+RESULT: {data['result']}
+OBSERVATION: {data['observation']}
+"""
