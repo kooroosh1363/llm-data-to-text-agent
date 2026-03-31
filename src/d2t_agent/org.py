@@ -401,3 +401,23 @@ ACTION: {data['action']}
 RESULT: {data['result']}
 OBSERVATION: {data['observation']}
 """
+
+
+# agents/base_agent.py
+class BaseAgent:
+    def init(self, name):
+        self.name = name
+
+    def run(self, input_text):
+        raise NotImplementedError
+    
+
+# agents/researcher.py
+from core.llm import ask_llm
+from tools.search_tool import search_tool
+
+class Researcher(BaseAgent):
+    def run(self, task):
+        search_result = search_tool(task)
+        prompt = f"Summarize this info: {search_result}"
+        return ask_llm(prompt)
