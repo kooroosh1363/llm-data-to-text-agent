@@ -421,3 +421,20 @@ class Researcher(BaseAgent):
         search_result = search_tool(task)
         prompt = f"Summarize this info: {search_result}"
         return ask_llm(prompt)
+    
+
+# agents/writer.py
+from core.llm import ask_llm
+
+class Writer(BaseAgent):
+    def run(self, data):
+        prompt = f"Write a clean answer based on: {data}"
+        return ask_llm(prompt)
+    
+
+# agents/manager.py
+class Manager(BaseAgent):
+    def run(self, task):
+        if "search" in task:
+            return "research"
+        return "write"
