@@ -438,3 +438,32 @@ class Manager(BaseAgent):
         if "search" in task:
             return "research"
         return "write"
+    
+
+# core/orchestrator.py
+from agents.manager import Manager
+from agents.researcher import Researcher
+from agents.writer import Writer
+
+manager = Manager("Manager")
+researcher = Researcher("Researcher")
+writer = Writer("Writer")
+
+def run_system(task):
+    decision = manager.run(task)
+
+    if decision == "research":
+        data = researcher.run(task)
+        return writer.run(data)
+
+    return writer.run(task)
+
+
+# main.py
+from core.orchestrator import run_system
+
+task = "search latest AI agent tools"
+
+result = run_system(task)
+
+print(result)
