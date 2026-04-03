@@ -26,3 +26,19 @@ async def run_agent():
     print("Async agent running")
 
 asyncio.run(run_agent())
+
+
+# memory/shared.py
+shared_memory = []
+
+def save(data):
+    shared_memory.append(data)
+
+def get_all():
+    return shared_memory
+
+
+# core/orchestrator.py
+from memory.shared import save
+
+save(result)
