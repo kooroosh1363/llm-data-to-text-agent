@@ -71,3 +71,18 @@ task = "search latest AI agent tools"
 result = run_system(task)
 
 print(result)
+
+# memory/shared.py
+shared_memory = []
+
+def save(data):
+    shared_memory.append(data)
+
+def get_all():
+    return shared_memory
+
+
+# core/orchestrator.py
+from memory.shared import save
+
+save(result)
