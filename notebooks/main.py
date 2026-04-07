@@ -82,7 +82,3 @@ def get_all():
     return shared_memory
 
 
-# core/orchestrator.py
-from memory.shared import save
-
-save(result)
