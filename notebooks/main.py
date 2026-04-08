@@ -82,3 +82,14 @@ def get_all():
     return shared_memory
 
 
+# utils/logger.py
+def log_agent(agent, msg):
+    print(f"[{agent}] -> {msg}")
+
+
+
+# core/orchestrator.py
+from utils.logger import log_agent
+
+log_agent("Manager", decision)
+
