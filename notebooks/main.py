@@ -93,3 +93,23 @@ from utils.logger import log_agent
 
 log_agent("Manager", decision)
 
+# core/state.py
+class AgentState:
+    def init(self, task):
+        self.task = task
+        self.plan = []
+        self.data = ""
+        self.result = ""
+
+
+# agents/manager.py
+from core.llm import ask_llm
+
+def manager_decide(task):
+    prompt = f"""
+    Decide what to do:
+    Task: {task}
+    Options: research, write
+    Answer only one word.
+    """
+    return ask_llm(prompt).strip().lower()
