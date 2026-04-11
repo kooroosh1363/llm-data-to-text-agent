@@ -113,3 +113,20 @@ def manager_decide(task):
     Answer only one word.
     """
     return ask_llm(prompt).strip().lower()
+
+
+
+# core/planner.py
+from core.llm import ask_llm
+
+def create_plan(task):
+    prompt = f"Create 3 steps plan for: {task}"
+    steps = ask_llm(prompt)
+    return steps.split("\n")
+
+
+# agents/researcher.py
+from tools.search_tool import search_tool
+
+def do_research(step):
+    return search_tool(step)
