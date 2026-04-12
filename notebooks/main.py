@@ -130,3 +130,18 @@ from tools.search_tool import search_tool
 
 def do_research(step):
     return search_tool(step)
+
+
+# agents/writer.py
+from core.llm import ask_llm
+
+def write_answer(data):
+    return ask_llm(f"Write final answer using: {data}")
+
+
+
+# core/router.py
+def route(step):
+    if "search" in step.lower():
+        return "research"
+    return "write"
