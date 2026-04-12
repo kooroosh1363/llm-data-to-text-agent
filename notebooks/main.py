@@ -145,3 +145,13 @@ def route(step):
     if "search" in step.lower():
         return "research"
     return "write"
+
+
+# memory/store.py
+memory = []
+
+def add_memory(item):
+    memory.append(item)
+
+def get_memory():
+    return memory
