@@ -155,3 +155,37 @@ def add_memory(item):
 
 def get_memory():
     return memory
+
+# core/engine.py
+from core.state import AgentState
+from core.planner import create_plan
+from core.router import route
+from agents.researcher import do_research
+from agents.writer import write_answer
+from memory.store import add_memory
+
+def run_engine(task):
+    state = AgentState(task)
+
+    state.plan = create_plan(task)
+
+    for step in state.plan:
+        if route(step) == "research":
+            result = do_research(step)
+        else:
+            result = write_answer(step)
+
+        add_memory(result)
+        state.data += result + "\n"
+
+    state.result = write_answer(state.data)
+    return state
+
+
+
+# main.py
+from core.engine import run_engine
+
+state = run_engine("latest AI agent tools")
+
+print(state.result)
