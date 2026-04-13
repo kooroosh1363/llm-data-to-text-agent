@@ -189,3 +189,11 @@ from core.engine import run_engine
 state = run_engine("latest AI agent tools")
 
 print(state.result)
+
+
+# utils/debug.py
+def debug_state(state):
+    print("TASK:", state.task)
+    print("PLAN:", state.plan)
+    print("DATA:", state.data[:200])
+    print("RESULT:", state.result[:200])
