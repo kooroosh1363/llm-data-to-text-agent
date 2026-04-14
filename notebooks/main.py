@@ -147,15 +147,6 @@ def route(step):
     return "write"
 
 
-# memory/store.py
-memory = []
-
-def add_memory(item):
-    memory.append(item)
-
-def get_memory():
-    return memory
-
 # core/engine.py
 from core.state import AgentState
 from core.planner import create_plan
