@@ -188,3 +188,27 @@ def debug_state(state):
     print("PLAN:", state.plan)
     print("DATA:", state.data[:200])
     print("RESULT:", state.result[:200])
+
+
+
+# api/main.py
+from fastapi import FastAPI
+from core.engine import run_engine
+
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"status": "AI Agent API Running"}
+
+
+
+# api/main.py
+@app.get("/run")
+def run(task: str):
+    state = run_engine(task)
+
+    return {
+        "task": state.task,
+        "result": state.result
+    }
