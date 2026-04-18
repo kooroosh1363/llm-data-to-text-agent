@@ -232,3 +232,16 @@ def run_task(input: TaskInput):
 
 
 
+# api/schema.py
+from pydantic import BaseModel
+
+class TaskInput(BaseModel):
+    task: str
+
+# api/main.py
+from api.schema import TaskInput
+
+@app.post("/run")
+def run_task(input: TaskInput):
+    state = run_engine(input.task)
+    return {"result": state.result}
