@@ -245,3 +245,17 @@ from api.schema import TaskInput
 def run_task(input: TaskInput):
     state = run_engine(input.task)
     return {"result": state.result}
+
+
+# api/main.py
+from memory.history import save_history
+
+save_history(input.task, state.result)
+
+
+# api/main.py
+from memory.history import get_history
+
+@app.get("/history")
+def history():
+    return get_history()
