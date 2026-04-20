@@ -1,23 +1,30 @@
-from ai_agents_libs import *
-from ai_agents_libs import *
-from ai_agents_libs import *
-from openai import OpenAI
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Agent Chat</title>
+</head>
+<body>
+    <h2>AI Agent</h2>
 
-client = OpenAI()
+    <input id="input" placeholder="Type your task..." />
+    <button onclick="send()">Send</button>
 
-resp = client.responses.create(
-    model="gpt-4.1-mini",
-    input="Explain AI agents in one sentence"
-)
+    <pre id="output"></pre>
 
-print(resp.output[0].content[0].text)
+    <script>
+        async function send() {
+            let text = document.getElementById("input").value;
 
-def create_agent(role, goal):
-    return Agent(role=role, goal=goal, backstory="AI helper")
+            let res = await fetch("http://127.0.0.1:8000/run", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({task: text})
+            });
 
-agent = create_agent("Analyst", "Analyze data")
-print(agent.role)
-
-with DDGS() as ddgs:
-    for r in ddgs.text("multi agent ai", max_results=2):
-        print(r["title"])
+            let data = await res.json();
+            document.getElementById("output").innerText = data.result;
+        }
+    </script>
+</body>
+</html>
