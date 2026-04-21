@@ -214,11 +214,6 @@ def run(task: str):
     }
 
 
-# api/schema.py
-from pydantic import BaseModel
-
-class TaskInput(BaseModel):
-    task: str
 
 
 
