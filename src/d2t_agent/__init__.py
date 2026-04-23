@@ -41,3 +41,25 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+
+<div id="chat"></div>
+
+<script>
+async function send() {
+    let text = document.getElementById("input").value;
+
+    document.getElementById("chat").innerHTML += "<p>🧑‍💻 " + text + "</p>";
+
+    let res = await fetch("http://127.0.0.1:8000/run", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({task: text})
+    });
+
+    let data = await res.json();
+
+    document.getElementById("chat").innerHTML += "<p>🤖 " + data.result + "</p>";
+}
+</script>
