@@ -65,7 +65,3 @@ async function send() {
 </script>
 
 
-<style>
-body { font-family: Arial; padding: 20px; }
-#chat p { margin: 5px 0; }
-</style>
