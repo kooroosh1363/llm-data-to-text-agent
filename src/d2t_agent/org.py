@@ -467,3 +467,12 @@ task = "search latest AI agent tools"
 result = run_system(task)
 
 print(result)
+
+
+# models/user.py
+from pydantic import BaseModel
+
+class User(BaseModel):
+    username: str
+    password: str
+    credits: int = 10
