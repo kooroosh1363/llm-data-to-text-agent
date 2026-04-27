@@ -476,3 +476,13 @@ class User(BaseModel):
     username: str
     password: str
     credits: int = 10
+
+
+# db/db.py
+users = {}
+
+def create_user(username, password):
+    users[username] = {"password": password, "credits": 10}
+
+def get_user(username):
+    return users.get(username)
