@@ -486,3 +486,15 @@ def create_user(username, password):
 
 def get_user(username):
     return users.get(username)
+
+
+# api/auth.py
+from fastapi import APIRouter
+from db.db import create_user
+
+router = APIRouter()
+
+@router.post("/signup")
+def signup(username: str, password: str):
+    create_user(username, password)
+    return {"status": "user created"}
