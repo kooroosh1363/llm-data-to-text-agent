@@ -497,4 +497,18 @@ router = APIRouter()
 @router.post("/signup")
 def signup(username: str, password: str):
     create_user(username, password)
-    return {"status": "user created"}
+    return {"status": "user created"}n  
+    \
+
+
+# api/auth.py
+from db.db import get_user
+
+@router.post("/login")
+def login(username: str, password: str):
+    user = get_user(username)
+
+    if not user or user["password"] != password:
+        return {"error": "invalid credentials"}
+
+    return {"status": "ok"}
