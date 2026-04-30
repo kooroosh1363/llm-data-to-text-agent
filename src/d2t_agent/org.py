@@ -512,3 +512,14 @@ def login(username: str, password: str):
         return {"error": "invalid credentials"}
 
     return {"status": "ok"}
+
+
+
+
+# services/usage.py
+def use_credit(user):
+    if user["credits"] <= 0:
+        return False
+
+    user["credits"] -= 1
+    return True
