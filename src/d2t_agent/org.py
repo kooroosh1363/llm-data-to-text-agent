@@ -541,3 +541,12 @@ def run(task: str, username: str):
     state = run_engine(task)
 
     return {"result": state.result}
+
+
+# services/usage.py
+def use_credit(user):
+    if user["credits"] <= 0:
+        return False
+
+    user["credits"] -= 1
+    return True
