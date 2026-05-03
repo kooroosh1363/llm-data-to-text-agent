@@ -550,3 +550,19 @@ def use_credit(user):
 
     user["credits"] -= 1
     return True
+
+
+# api/main.py
+from services.usage import use_credit
+from db.db import get_user
+
+@app.post("/run")
+def run(task: str, username: str):
+    user = get_user(username)
+
+    if not use_credit(user):
+        return {"error": "no credits"}
+
+    state = run_engine(task)
+
+    return {"result": state.result}
