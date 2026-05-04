@@ -566,3 +566,15 @@ def run(task: str, username: str):
     state = run_engine(task)
 
     return {"result": state.result}
+
+
+
+
+# db/history.py
+history = {}
+
+def save(user, task, result):
+    history.setdefault(user, []).append({
+        "task": task,
+        "result": result
+    })
