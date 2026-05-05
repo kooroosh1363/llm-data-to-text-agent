@@ -578,3 +578,11 @@ def save(user, task, result):
         "task": task,
         "result": result
     })
+
+
+# api/history.py
+from db.history import history
+
+@app.get("/history")
+def get_history(username: str):
+    return history.get(username, [])
