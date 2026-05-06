@@ -586,3 +586,8 @@ from db.history import history
 @app.get("/history")
 def get_history(username: str):
     return history.get(username, [])
+
+
+# services/payment.py
+def add_credits(user, amount):
+    user["credits"] += amount
