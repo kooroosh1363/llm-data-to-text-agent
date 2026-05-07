@@ -591,3 +591,13 @@ def get_history(username: str):
 # services/payment.py
 def add_credits(user, amount):
     user["credits"] += amount
+
+
+
+<button onclick="buy()">Buy Credits</button>
+
+<script>
+async function buy() {
+    alert("Payment simulated ✅ Credits added");
+}
+</script>
