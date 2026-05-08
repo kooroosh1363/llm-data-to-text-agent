@@ -570,14 +570,6 @@ def run(task: str, username: str):
 
 
 
-# db/history.py
-history = {}
-
-def save(user, task, result):
-    history.setdefault(user, []).append({
-        "task": task,
-        "result": result
-    })
 
 
 # api/history.py
