@@ -607,3 +607,15 @@ def ask_llm(prompt: str) -> str:
         input=prompt,
     )
     return response.output[0].content[0].text
+
+
+
+from dataclasses import dataclass, field
+
+
+@dataclass
+class AgentState:
+    task: str
+    plan: list[str] = field(default_factory=list)
+    notes: list[str] = field(default_factory=list)
+    result: str = ""
