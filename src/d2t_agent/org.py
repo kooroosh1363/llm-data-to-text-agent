@@ -634,3 +634,11 @@ def ask_llm(prompt: str) -> str:
         input=prompt,
     )
     return response.output[0].content[0].text
+
+
+from app.core.llm import ask_llm
+
+
+def write_final_answer(notes: list[str]) -> str:
+    context = "\n".join(notes)
+    return ask_llm(f"Write a final answer using:\n{context}")
