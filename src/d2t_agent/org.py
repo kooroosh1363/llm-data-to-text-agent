@@ -642,3 +642,14 @@ from app.core.llm import ask_llm
 def write_final_answer(notes: list[str]) -> str:
     context = "\n".join(notes)
     return ask_llm(f"Write a final answer using:\n{context}")
+
+
+from duckduckgo_search import DDGS
+
+
+def search_web(query: str) -> str:
+    with DDGS() as ddgs:
+        results = list(ddgs.text(query, max_results=3))
+    if not results:
+        return "No results"
+    return results[0]["title"]
