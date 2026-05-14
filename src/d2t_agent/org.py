@@ -653,3 +653,12 @@ def search_web(query: str) -> str:
     if not results:
         return "No results"
     return results[0]["title"]
+
+
+<button onclick="buy()">Buy Credits</button>
+
+<script>
+async function buy() {
+    alert("Payment simulated ✅ Credits added");
+}
+</script>
