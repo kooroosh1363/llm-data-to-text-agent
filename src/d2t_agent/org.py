@@ -662,3 +662,15 @@ async function buy() {
     alert("Payment simulated ✅ Credits added");
 }
 </script>
+
+
+
+from fastapi.testclient import TestClient
+from app.api.main import app
+
+client = TestClient(app)
+
+
+def test_root():
+    response = client.get("/")
+    assert response.status_code == 200
