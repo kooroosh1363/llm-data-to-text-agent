@@ -636,12 +636,6 @@ def ask_llm(prompt: str) -> str:
     return response.output[0].content[0].text
 
 
-from app.core.llm import ask_llm
-
-
-def write_final_answer(notes: list[str]) -> str:
-    context = "\n".join(notes)
-    return ask_llm(f"Write a final answer using:\n{context}")
 
 
 from duckduckgo_search import DDGS
