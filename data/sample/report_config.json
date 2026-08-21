@@ -1,0 +1,20 @@
+{
+  "title": "Regional Sales Brief",
+  "metrics": [
+    {
+      "column": "revenue",
+      "label": "Revenue",
+      "aggregation": "sum",
+      "format": "currency"
+    },
+    {
+      "column": "orders",
+      "label": "Orders",
+      "aggregation": "sum",
+      "format": "integer"
+    }
+  ],
+  "group_by": "region",
+  "top_n": 3
+}
+

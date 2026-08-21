@@ -1,7 +1,12 @@
-outputs/
-data/raw/
+.venv/
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
+.coverage
+dist/
+build/
+*.egg-info/
+outputs/
 .env
 .DS_Store
-.ipynb_checkpoints/
+
